@@ -11,302 +11,561 @@
             theme: {
                 extend: {
                     colors: {
-                        'deep-blue': '#1a365d',
-                        'forest-green': '#2d5016',
-                        'warm-gold': '#d69e2e',
-                        'light-blue': '#e6fffa',
-                        'soft-gray': '#718096',
-                        'dark-gray': '#2d3748'
+                        'primary-blue': '#2563EB',
+                        'primary-green': '#16A34A',
+                        'accent-gold': '#FBBF24',
+                        'background': '#FFFFFF',
+                        'text-gray': '#1F2937',
+                        'light-gray': '#6B7280',
+                        'light-blue': '#EFF6FF'
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'libre': ['Libre Baskerville', 'serif']
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="font-['Inter'] text-dark-gray bg-white">
+<body class="font-libre text-text-gray bg-background">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="bg-background shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-deep-blue">Koru Impact</a>
+                    <a href="index.html" class="text-2xl font-bold text-primary-blue font-lato">Koru Impact</a>
                 </div>
+                <!-- Masaüstü Menü -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-soft-gray hover:text-deep-blue transition-colors">Ana Sayfa</a>
-                    <a href="about.html" class="text-soft-gray hover:text-deep-blue transition-colors">Hakkımızda</a>
-                    <a href="services.html" class="text-soft-gray hover:text-deep-blue transition-colors">Hizmetlerimiz</a>
-                    <a href="contact.html" class="text-deep-blue font-medium hover:text-forest-green transition-colors">İletişim</a>
+                    <div id="nav-links-tr" class="flex items-center space-x-6">
+                        <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Ana Sayfa</a>
+                        <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">Hakkımızda</a>
+                        <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Hizmetlerimiz</a>
+                        <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">İletişim</a>
+                    </div>
+                    <div id="nav-links-en" class="flex items-center space-x-6 hidden">
+                        <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Home</a>
+                        <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">About</a>
+                        <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Services</a>
+                        <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">Contact</a>
+                    </div>
+                    <!-- Dil seçici -->
+                    <div class="ml-6 flex items-center space-x-2">
+                        <button id="lang-tr" class="font-bold text-primary-blue focus:outline-none">TR</button>
+                        <span class="text-light-gray">|</span>
+                        <button id="lang-en" class="text-light-gray hover:text-primary-blue transition-colors focus:outline-none">EN</button>
+                    </div>
                 </div>
+                <!-- Mobil Menü -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-deep-blue hover:text-forest-green focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-primary-blue hover:text-primary-green focus:outline-none mr-4">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
+                    <div class="flex items-center space-x-2">
+                        <button id="lang-tr-mobile" class="font-bold text-primary-blue focus:outline-none">TR</button>
+                        <span class="text-light-gray">|</span>
+                        <button id="lang-en-mobile" class="text-light-gray hover:text-primary-blue transition-colors focus:outline-none">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobil Menü Açılır -->
+        <div id="mobile-menu" class="md:hidden hidden bg-background border-t border-light-gray">
+            <div class="px-4 py-4 space-y-2">
+                <div id="mobile-links-tr" class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Ana Sayfa</a>
+                    <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">Hakkımızda</a>
+                    <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Hizmetlerimiz</a>
+                    <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">İletişim</a>
+                </div>
+                <div id="mobile-links-en" class="flex flex-col space-y-2 hidden">
+                    <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Home</a>
+                    <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">About</a>
+                    <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Services</a>
+                    <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="bg-gradient-to-r from-deep-blue to-forest-green text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                    İletişim
-                </h1>
-                <p class="text-xl md:text-2xl text-light-blue max-w-3xl mx-auto">
-                    Bizimle iletişime geçin
-                </p>
+    <div id="content-tr" lang="tr">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-r from-primary-blue to-primary-green text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                        İletişim
+                    </h1>
+                    <p class="text-xl md:text-2xl text-light-blue max-w-3xl mx-auto">
+                        Bizimle iletişime geçin
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- Contact Information Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary-blue mb-6">
+                            Mesaj Gönderin
+                        </h2>
+                        <p class="text-soft-gray mb-8">
+                            Sosyal bilim temelli danışmanlık hizmetlerimiz hakkında bilgi almak veya proje teklifi istemek için aşağıdaki formu doldurabilirsiniz.
+                        </p>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-dark-gray mb-2">Ad *</label>
+                                    <input type="text" id="firstName" name="firstName" required 
+                                           class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-dark-gray mb-2">Soyad *</label>
+                                    <input type="text" id="lastName" name="lastName" required 
+                                           class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-dark-gray mb-2">E-posta *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-dark-gray mb-2">Telefon</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-dark-gray mb-2">Şirket</label>
+                                <input type="text" id="company" name="company" 
+                                       class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-dark-gray mb-2">İlgilendiğiniz Hizmet</label>
+                                <select id="service" name="service" 
+                                        class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                                    <option value="">Seçiniz</option>
+                                    <option value="social-impact">Sosyal Etki Değerlendirmesi</option>
+                                    <option value="css-strategy">KSS Stratejisi</option>
+                                    <option value="research-analysis">Araştırma & Analiz</option>
+                                    <option value="other">Diğer</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-dark-gray mb-2">Mesajınız *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent"
+                                          placeholder="Projeniz hakkında bilgi verin..."></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-primary-blue text-white py-4 px-6 rounded-lg font-semibold hover:bg-primary-green transition-colors">
+                                Mesaj Gönder
+                            </button>
+                        </form>
+                    </div>
 
-    <!-- Contact Information Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div>
-                    <h2 class="text-3xl font-bold text-deep-blue mb-6">
-                        Mesaj Gönderin
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary-blue mb-6">
+                            İletişim Bilgileri
+                        </h2>
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">Adres</h3>
+                                    <p class="text-soft-gray">
+                                        Levent Mahallesi, Büyükdere Caddesi<br>
+                                        No: 123, Kat: 5<br>
+                                        Beşiktaş, İstanbul, Türkiye
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">Telefon</h3>
+                                    <p class="text-soft-gray">
+                                        +90 (212) 555 0123<br>
+                                        +90 (212) 555 0124
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">E-posta</h3>
+                                    <p class="text-soft-gray">
+                                        info@koruimpact.com<br>
+                                        projeler@koruimpact.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">Çalışma Saatleri</h3>
+                                    <p class="text-soft-gray">
+                                        Pazartesi - Cuma: 09:00 - 18:00<br>
+                                        Cumartesi: 09:00 - 13:00<br>
+                                        Pazar: Kapalı
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Contact Buttons -->
+                        <div class="mt-8">
+                            <h3 class="text-lg font-semibold text-primary-blue mb-4">Hızlı İletişim</h3>
+                            <div class="grid grid-cols-3 gap-4">
+                                <a href="tel:+902125550123" 
+                                   class="bg-primary-blue text-white p-4 rounded-lg text-center hover:bg-primary-green transition-colors">
+                                    <i class="fas fa-phone text-xl mb-2"></i>
+                                    <div class="text-sm">Ara</div>
+                                </a>
+                                <a href="mailto:info@koruimpact.com" 
+                                   class="bg-primary-green text-white p-4 rounded-lg text-center hover:bg-primary-blue transition-colors">
+                                    <i class="fas fa-envelope text-xl mb-2"></i>
+                                    <div class="text-sm">E-posta</div>
+                                </a>
+                                <a href="https://wa.me/902125550123" target="_blank" 
+                                   class="bg-accent-gold text-white p-4 rounded-lg text-center hover:bg-yellow-400 transition-colors">
+                                    <i class="fab fa-whatsapp text-xl mb-2"></i>
+                                    <div class="text-sm">WhatsApp</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="py-20 bg-light-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary-blue mb-4">
+                        Konumumuz
                     </h2>
-                    <p class="text-soft-gray mb-8">
-                        Sosyal bilim temelli danışmanlık hizmetlerimiz hakkında bilgi almak veya proje teklifi istemek için aşağıdaki formu doldurabilirsiniz.
+                    <p class="text-soft-gray">
+                        İstanbul'un merkezi Levent bölgesinde hizmetinizdeyiz
                     </p>
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="firstName" class="block text-sm font-medium text-dark-gray mb-2">Ad *</label>
-                                <input type="text" id="firstName" name="firstName" required 
-                                       class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-deep-blue focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="lastName" class="block text-sm font-medium text-dark-gray mb-2">Soyad *</label>
-                                <input type="text" id="lastName" name="lastName" required 
-                                       class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-deep-blue focus:border-transparent">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-dark-gray mb-2">E-posta *</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-deep-blue focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-dark-gray mb-2">Telefon</label>
-                            <input type="tel" id="phone" name="phone" 
-                                   class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-deep-blue focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="company" class="block text-sm font-medium text-dark-gray mb-2">Şirket</label>
-                            <input type="text" id="company" name="company" 
-                                   class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-deep-blue focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="service" class="block text-sm font-medium text-dark-gray mb-2">İlgilendiğiniz Hizmet</label>
-                            <select id="service" name="service" 
-                                    class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-deep-blue focus:border-transparent">
-                                <option value="">Seçiniz</option>
-                                <option value="social-impact">Sosyal Etki Değerlendirmesi</option>
-                                <option value="css-strategy">KSS Stratejisi</option>
-                                <option value="research-analysis">Araştırma & Analiz</option>
-                                <option value="other">Diğer</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-dark-gray mb-2">Mesajınız *</label>
-                            <textarea id="message" name="message" rows="5" required 
-                                      class="w-full px-4 py-3 border border-soft-gray rounded-lg focus:ring-2 focus:ring-deep-blue focus:border-transparent"
-                                      placeholder="Projeniz hakkında bilgi verin..."></textarea>
-                        </div>
-                        <button type="submit" 
-                                class="w-full bg-deep-blue text-white py-4 px-6 rounded-lg font-semibold hover:bg-forest-green transition-colors">
-                            Mesaj Gönder
-                        </button>
-                    </form>
                 </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 bg-soft-gray rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map text-4xl text-primary-blue mb-4"></i>
+                            <p class="text-soft-gray">Google Maps entegrasyonu burada yer alacak</p>
+                            <p class="text-sm text-soft-gray mt-2">Levent, İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Contact Information -->
-                <div>
-                    <h2 class="text-3xl font-bold text-deep-blue mb-6">
-                        İletişim Bilgileri
+        <!-- FAQ Section -->
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary-blue mb-4">
+                        Sık Sorulan Sorular
                     </h2>
-                    <div class="space-y-8">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-deep-blue rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-deep-blue mb-2">Adres</h3>
-                                <p class="text-soft-gray">
-                                    Levent Mahallesi, Büyükdere Caddesi<br>
-                                    No: 123, Kat: 5<br>
-                                    Beşiktaş, İstanbul, Türkiye
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-forest-green rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-phone text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-deep-blue mb-2">Telefon</h3>
-                                <p class="text-soft-gray">
-                                    +90 (212) 555 0123<br>
-                                    +90 (212) 555 0124
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-warm-gold rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-deep-blue mb-2">E-posta</h3>
-                                <p class="text-soft-gray">
-                                    info@koruimpact.com<br>
-                                    projeler@koruimpact.com
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-deep-blue rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-clock text-white"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-deep-blue mb-2">Çalışma Saatleri</h3>
-                                <p class="text-soft-gray">
-                                    Pazartesi - Cuma: 09:00 - 18:00<br>
-                                    Cumartesi: 09:00 - 13:00<br>
-                                    Pazar: Kapalı
-                                </p>
-                            </div>
-                        </div>
+                    <p class="text-soft-gray">
+                        Hizmetlerimiz hakkında sık sorulan sorular
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">
+                            Sosyal etki değerlendirmesi ne kadar sürer?
+                        </h3>
+                        <p class="text-soft-gray">
+                            Proje kapsamına göre değişmekle birlikte, tipik bir sosyal etki değerlendirmesi 3-12 ay arasında tamamlanır.
+                        </p>
                     </div>
-
-                    <!-- Quick Contact Buttons -->
-                    <div class="mt-8">
-                        <h3 class="text-lg font-semibold text-deep-blue mb-4">Hızlı İletişim</h3>
-                        <div class="grid grid-cols-3 gap-4">
-                            <a href="tel:+902125550123" 
-                               class="bg-deep-blue text-white p-4 rounded-lg text-center hover:bg-forest-green transition-colors">
-                                <i class="fas fa-phone text-xl mb-2"></i>
-                                <div class="text-sm">Ara</div>
-                            </a>
-                            <a href="mailto:info@koruimpact.com" 
-                               class="bg-forest-green text-white p-4 rounded-lg text-center hover:bg-deep-blue transition-colors">
-                                <i class="fas fa-envelope text-xl mb-2"></i>
-                                <div class="text-sm">E-posta</div>
-                            </a>
-                            <a href="https://wa.me/902125550123" target="_blank" 
-                               class="bg-warm-gold text-white p-4 rounded-lg text-center hover:bg-yellow-400 transition-colors">
-                                <i class="fab fa-whatsapp text-xl mb-2"></i>
-                                <div class="text-sm">WhatsApp</div>
-                            </a>
-                        </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">
+                            Hangi sektörlerde hizmet veriyorsunuz?
+                        </h3>
+                        <p class="text-soft-gray">
+                            Eğitim, sağlık, teknoloji, finans, enerji ve sivil toplum kuruluşları dahil olmak üzere tüm sektörlerde hizmet veriyoruz.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">
+                            Proje maliyetleri nasıl belirlenir?
+                        </h3>
+                        <p class="text-soft-gray">
+                            Proje kapsamı, süresi ve karmaşıklığına göre özel teklifler hazırlıyoruz. Ücretsiz danışmanlık için bizimle iletişime geçebilirsiniz.
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">
+                            Uzaktan çalışma yapabiliyor musunuz?
+                        </h3>
+                        <p class="text-soft-gray">
+                            Evet, pandemi sonrası hibrit çalışma modelimizle hem yüz yüze hem de uzaktan hizmet verebiliyoruz.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Map Section -->
-    <section class="py-20 bg-light-blue">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-deep-blue mb-4">
-                    Konumumuz
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary-green to-primary-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Hemen Başlayın
                 </h2>
-                <p class="text-soft-gray">
-                    İstanbul'un merkezi Levent bölgesinde hizmetinizdeyiz
+                <p class="text-xl mb-8 text-light-blue">
+                    Sosyal bilim temelli danışmanlık hizmetlerimiz hakkında detaylı bilgi almak için bugün bizimle iletişime geçin.
                 </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+902125550123" class="bg-accent-gold text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors">
+                        Hemen Ara
+                    </a>
+                    <a href="mailto:info@koruimpact.com" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary-blue transition-colors">
+                        E-posta Gönder
+                    </a>
+                </div>
             </div>
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <div class="aspect-w-16 aspect-h-9 bg-soft-gray rounded-lg flex items-center justify-center">
-                    <div class="text-center">
-                        <i class="fas fa-map text-4xl text-deep-blue mb-4"></i>
-                        <p class="text-soft-gray">Google Maps entegrasyonu burada yer alacak</p>
-                        <p class="text-sm text-soft-gray mt-2">Levent, İstanbul, Türkiye</p>
+        </section>
+    </div>
+    <div id="content-en" lang="en" class="hidden">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-r from-primary-blue to-primary-green text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact</h1>
+                    <p class="text-xl md:text-2xl text-light-blue max-w-3xl mx-auto">Get in touch with us</p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Information Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary-blue mb-6">Send a Message</h2>
+                        <p class="text-light-gray mb-8">You can fill out the form below to get information about our social science-based consulting services or request a project quote.</p>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-text-gray mb-2">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required 
+                                           class="w-full px-4 py-3 border border-light-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-text-gray mb-2">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required 
+                                           class="w-full px-4 py-3 border border-light-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-text-gray mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-light-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-text-gray mb-2">Phone</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-light-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-text-gray mb-2">Company</label>
+                                <input type="text" id="company" name="company" 
+                                       class="w-full px-4 py-3 border border-light-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-text-gray mb-2">Service of Interest</label>
+                                <select id="service" name="service" 
+                                        class="w-full px-4 py-3 border border-light-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent">
+                                    <option value="">Select</option>
+                                    <option value="social-impact">Social Impact Assessment</option>
+                                    <option value="css-strategy">CSR Strategy</option>
+                                    <option value="research-analysis">Research & Analysis</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-text-gray mb-2">Your Message *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full px-4 py-3 border border-light-gray rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-transparent"
+                                          placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-primary-blue text-white py-4 px-6 rounded-lg font-semibold hover:bg-primary-green transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary-blue mb-6">Contact Information</h2>
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">Address</h3>
+                                    <p class="text-light-gray">
+                                        Levent District, Büyükdere Street<br>
+                                        No: 123, Floor: 5<br>
+                                        Beşiktaş, Istanbul, Turkey
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-green rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">Phone</h3>
+                                    <p class="text-light-gray">
+                                        +90 (212) 555 0123<br>
+                                        +90 (212) 555 0124
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">Email</h3>
+                                    <p class="text-light-gray">
+                                        info@koruimpact.com<br>
+                                        projects@koruimpact.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-primary-blue mb-2">Working Hours</h3>
+                                    <p class="text-light-gray">
+                                        Monday - Friday: 09:00 - 18:00<br>
+                                        Saturday: 09:00 - 13:00<br>
+                                        Sunday: Closed
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Contact Buttons -->
+                        <div class="mt-8">
+                            <h3 class="text-lg font-semibold text-primary-blue mb-4">Quick Contact</h3>
+                            <div class="grid grid-cols-3 gap-4">
+                                <a href="tel:+902125550123" 
+                                   class="bg-primary-blue text-white p-4 rounded-lg text-center hover:bg-primary-green transition-colors">
+                                    <i class="fas fa-phone text-xl mb-2"></i>
+                                    <div class="text-sm">Call</div>
+                                </a>
+                                <a href="mailto:info@koruimpact.com" 
+                                   class="bg-primary-green text-white p-4 rounded-lg text-center hover:bg-primary-blue transition-colors">
+                                    <i class="fas fa-envelope text-xl mb-2"></i>
+                                    <div class="text-sm">Email</div>
+                                </a>
+                                <a href="https://wa.me/902125550123" target="_blank" 
+                                   class="bg-accent-gold text-white p-4 rounded-lg text-center hover:bg-yellow-400 transition-colors">
+                                    <i class="fab fa-whatsapp text-xl mb-2"></i>
+                                    <div class="text-sm">WhatsApp</div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-deep-blue mb-4">
-                    Sık Sorulan Sorular
-                </h2>
-                <p class="text-soft-gray">
-                    Hizmetlerimiz hakkında sık sorulan sorular
-                </p>
-            </div>
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-lg font-semibold text-deep-blue mb-3">
-                        Sosyal etki değerlendirmesi ne kadar sürer?
-                    </h3>
-                    <p class="text-soft-gray">
-                        Proje kapsamına göre değişmekle birlikte, tipik bir sosyal etki değerlendirmesi 3-12 ay arasında tamamlanır.
-                    </p>
+        <!-- Map Section -->
+        <section class="py-20 bg-light-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary-blue mb-4">Our Location</h2>
+                    <p class="text-light-gray">We are at your service in the central Levent district of Istanbul</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-lg font-semibold text-deep-blue mb-3">
-                        Hangi sektörlerde hizmet veriyorsunuz?
-                    </h3>
-                    <p class="text-soft-gray">
-                        Eğitim, sağlık, teknoloji, finans, enerji ve sivil toplum kuruluşları dahil olmak üzere tüm sektörlerde hizmet veriyoruz.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-lg font-semibold text-deep-blue mb-3">
-                        Proje maliyetleri nasıl belirlenir?
-                    </h3>
-                    <p class="text-soft-gray">
-                        Proje kapsamı, süresi ve karmaşıklığına göre özel teklifler hazırlıyoruz. Ücretsiz danışmanlık için bizimle iletişime geçebilirsiniz.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-lg font-semibold text-deep-blue mb-3">
-                        Uzaktan çalışma yapabiliyor musunuz?
-                    </h3>
-                    <p class="text-soft-gray">
-                        Evet, pandemi sonrası hibrit çalışma modelimizle hem yüz yüze hem de uzaktan hizmet verebiliyoruz.
-                    </p>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="aspect-w-16 aspect-h-9 bg-light-gray rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map text-4xl text-primary-blue mb-4"></i>
+                            <p class="text-light-gray">Google Maps integration will be here</p>
+                            <p class="text-sm text-light-gray mt-2">Levent, Istanbul, Turkey</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-forest-green to-deep-blue text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Hemen Başlayın
-            </h2>
-            <p class="text-xl mb-8 text-light-blue">
-                Sosyal bilim temelli danışmanlık hizmetlerimiz hakkında detaylı bilgi almak için bugün bizimle iletişime geçin.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+902125550123" class="bg-warm-gold text-deep-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors">
-                    Hemen Ara
-                </a>
-                <a href="mailto:info@koruimpact.com" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-deep-blue transition-colors">
-                    E-posta Gönder
-                </a>
+        <!-- FAQ Section -->
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary-blue mb-4">Frequently Asked Questions</h2>
+                    <p class="text-light-gray">Frequently asked questions about our services</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">How long does a social impact assessment take?</h3>
+                        <p class="text-light-gray">Depending on the scope of the project, a typical social impact assessment is completed within 3-12 months.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">Which sectors do you serve?</h3>
+                        <p class="text-light-gray">We serve all sectors including education, healthcare, technology, finance, energy, and non-governmental organizations.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">How are project costs determined?</h3>
+                        <p class="text-light-gray">We prepare custom quotes based on project scope, duration, and complexity. You can contact us for free consultation.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary-blue mb-3">Can you work remotely?</h3>
+                        <p class="text-light-gray">Yes, with our hybrid work model after the pandemic, we can provide services both face-to-face and remotely.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary-green to-primary-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Get Started Today</h2>
+                <p class="text-xl mb-8 text-light-blue">Contact us today to learn more about our social science-based consulting services.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+902125550123" class="bg-accent-gold text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors">
+                        Call Now
+                    </a>
+                    <a href="mailto:info@koruimpact.com" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary-blue transition-colors">
+                        Send Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark-gray text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-2xl font-bold text-warm-gold mb-4">Koru Impact</h3>
+                    <h3 class="text-2xl font-bold text-accent-gold mb-4">Koru Impact</h3>
                     <p class="text-soft-gray">
                         Sosyal bilim temelli danışmanlık hizmetleri ile kurumlarınızın sosyal etkisini maksimize ediyoruz.
                     </p>
@@ -331,15 +590,15 @@
                     <h4 class="text-lg font-semibold mb-4">İletişim</h4>
                     <ul class="space-y-2">
                         <li class="flex items-center">
-                            <i class="fas fa-envelope text-warm-gold mr-2"></i>
+                            <i class="fas fa-envelope text-accent-gold mr-2"></i>
                             <span class="text-soft-gray">info@koruimpact.com</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone text-warm-gold mr-2"></i>
+                            <i class="fas fa-phone text-accent-gold mr-2"></i>
                             <span class="text-soft-gray">+90 (212) 555 0123</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-warm-gold mr-2"></i>
+                            <i class="fas fa-map-marker-alt text-accent-gold mr-2"></i>
                             <span class="text-soft-gray">İstanbul, Türkiye</span>
                         </li>
                     </ul>
@@ -373,15 +632,56 @@
                     }
                 });
                 
+                // Get current language
+                const currentLang = document.getElementById('content-en').classList.contains('hidden') ? 'tr' : 'en';
+                
                 if (isValid) {
-                    // Show success message
-                    alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+                    // Show success message based on language
+                    const successMessage = currentLang === 'tr' 
+                        ? 'Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.'
+                        : 'Your message has been sent successfully! We will get back to you as soon as possible.';
+                    alert(successMessage);
                     form.reset();
                 } else {
-                    alert('Lütfen tüm zorunlu alanları doldurun.');
+                    // Show error message based on language
+                    const errorMessage = currentLang === 'tr'
+                        ? 'Lütfen tüm zorunlu alanları doldurun.'
+                        : 'Please fill in all required fields.';
+                    alert(errorMessage);
                 }
             });
         });
+    </script>
+    <script>
+        // Dil seçici scripti
+        function setLang(lang) {
+            document.getElementById('content-tr').classList.toggle('hidden', lang !== 'tr');
+            document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+            // Navigation vurgusu
+            document.getElementById('lang-tr').classList.toggle('font-bold', lang === 'tr');
+            document.getElementById('lang-tr').classList.toggle('text-primary-blue', lang === 'tr');
+            document.getElementById('lang-en').classList.toggle('font-bold', lang === 'en');
+            document.getElementById('lang-en').classList.toggle('text-primary-blue', lang === 'en');
+            // Masaüstü menü linkleri
+            document.getElementById('nav-links-tr').classList.toggle('hidden', lang !== 'tr');
+            document.getElementById('nav-links-en').classList.toggle('hidden', lang !== 'en');
+            // Mobil menü linkleri
+            document.getElementById('mobile-links-tr').classList.toggle('hidden', lang !== 'tr');
+            document.getElementById('mobile-links-en').classList.toggle('hidden', lang !== 'en');
+            // Mobil dil seçici
+            document.getElementById('lang-tr-mobile').classList.toggle('font-bold', lang === 'tr');
+            document.getElementById('lang-tr-mobile').classList.toggle('text-primary-blue', lang === 'tr');
+            document.getElementById('lang-en-mobile').classList.toggle('font-bold', lang === 'en');
+            document.getElementById('lang-en-mobile').classList.toggle('text-primary-blue', lang === 'en');
+        }
+        document.getElementById('lang-tr').onclick = function() { setLang('tr'); };
+        document.getElementById('lang-en').onclick = function() { setLang('en'); };
+        document.getElementById('lang-tr-mobile').onclick = function() { setLang('tr'); };
+        document.getElementById('lang-en-mobile').onclick = function() { setLang('en'); };
+        // Mobil menü açma/kapama
+        document.getElementById('mobile-menu-btn').onclick = function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        };
     </script>
 </body>
 </html> 

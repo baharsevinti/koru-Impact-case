@@ -11,310 +11,599 @@
             theme: {
                 extend: {
                     colors: {
-                        'deep-blue': '#1a365d',
-                        'forest-green': '#2d5016',
-                        'warm-gold': '#d69e2e',
-                        'light-blue': '#e6fffa',
-                        'soft-gray': '#718096',
-                        'dark-gray': '#2d3748'
+                        'primary-blue': '#2563EB',
+                        'primary-green': '#16A34A',
+                        'accent-gold': '#FBBF24',
+                        'background': '#FFFFFF',
+                        'text-gray': '#1F2937',
+                        'light-gray': '#6B7280',
+                        'light-blue': '#EFF6FF'
+                    },
+                    fontFamily: {
+                        'lato': ['Lato', 'sans-serif'],
+                        'libre': ['Libre Baskerville', 'serif']
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="font-['Inter'] text-dark-gray bg-white">
+<body class="font-libre text-text-gray bg-background">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="bg-background shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-deep-blue">Koru Impact</a>
+                    <a href="index.html" class="text-2xl font-bold text-primary-blue font-lato">Koru Impact</a>
                 </div>
+                <!-- Masaüstü Menü -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-soft-gray hover:text-deep-blue transition-colors">Ana Sayfa</a>
-                    <a href="about.html" class="text-deep-blue font-medium hover:text-forest-green transition-colors">Hakkımızda</a>
-                    <a href="services.html" class="text-soft-gray hover:text-deep-blue transition-colors">Hizmetlerimiz</a>
-                    <a href="contact.html" class="text-soft-gray hover:text-deep-blue transition-colors">İletişim</a>
+                    <div id="nav-links-tr" class="flex items-center space-x-6">
+                        <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Ana Sayfa</a>
+                        <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">Hakkımızda</a>
+                        <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Hizmetlerimiz</a>
+                        <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">İletişim</a>
+                    </div>
+                    <div id="nav-links-en" class="flex items-center space-x-6 hidden">
+                        <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Home</a>
+                        <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">About</a>
+                        <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Services</a>
+                        <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">Contact</a>
+                    </div>
+                    <!-- Dil seçici -->
+                    <div class="ml-6 flex items-center space-x-2">
+                        <button id="lang-tr" class="font-bold text-primary-blue focus:outline-none">TR</button>
+                        <span class="text-light-gray">|</span>
+                        <button id="lang-en" class="text-light-gray hover:text-primary-blue transition-colors focus:outline-none">EN</button>
+                    </div>
                 </div>
+                <!-- Mobil Menü -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-deep-blue hover:text-forest-green focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-primary-blue hover:text-primary-green focus:outline-none mr-4">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
+                    <div class="flex items-center space-x-2">
+                        <button id="lang-tr-mobile" class="font-bold text-primary-blue focus:outline-none">TR</button>
+                        <span class="text-light-gray">|</span>
+                        <button id="lang-en-mobile" class="text-light-gray hover:text-primary-blue transition-colors focus:outline-none">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobil Menü Açılır -->
+        <div id="mobile-menu" class="md:hidden hidden bg-background border-t border-light-gray">
+            <div class="px-4 py-4 space-y-2">
+                <div id="mobile-links-tr" class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Ana Sayfa</a>
+                    <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">Hakkımızda</a>
+                    <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Hizmetlerimiz</a>
+                    <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">İletişim</a>
+                </div>
+                <div id="mobile-links-en" class="flex flex-col space-y-2 hidden">
+                    <a href="index.html" class="text-text-gray hover:text-primary-blue font-lato">Home</a>
+                    <a href="about.html" class="text-text-gray hover:text-primary-blue font-lato">About</a>
+                    <a href="services.html" class="text-text-gray hover:text-primary-blue font-lato">Services</a>
+                    <a href="contact.html" class="text-text-gray hover:text-primary-blue font-lato">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="bg-gradient-to-r from-deep-blue to-forest-green text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                    Hakkımızda
-                </h1>
-                <p class="text-xl md:text-2xl text-light-blue max-w-3xl mx-auto">
-                    Sosyal bilimlerin gücüyle değişim yaratıyoruz
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Story Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-6">
-                        Hikayemiz
-                    </h2>
-                    <p class="text-lg text-soft-gray mb-6">
-                        2014 yılında, sosyal bilimlerin kurumsal dünyada daha etkili kullanılması gerektiğine inanan bir grup akademisyen ve danışman tarafından kurulduk.
-                    </p>
-                    <p class="text-lg text-soft-gray mb-6">
-                        Amacımız, sosyoloji, psikoloji, ekonomi ve siyaset bilimi gibi disiplinlerin metodolojilerini kullanarak kurumların toplumsal etkisini ölçülebilir ve sürdürülebilir şekilde artırmaktı.
-                    </p>
-                    <p class="text-lg text-soft-gray">
-                        Bugün, 10 yılı aşkın deneyimimizle, 50'den fazla kuruma hizmet verdik ve 100'den fazla projeyi başarıyla tamamladık.
-                    </p>
+    <div id="content-tr" lang="tr">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-r from-primary-blue to-primary-green text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Hakkımızda</h1>
+                    <p class="text-xl md:text-2xl text-light-blue max-w-3xl mx-auto">Sosyal bilimlerin gücüyle değişim yaratıyoruz</p>
                 </div>
-                <div class="bg-light-blue p-8 rounded-lg">
-                    <div class="text-center">
-                        <i class="fas fa-rocket text-6xl text-deep-blue mb-4"></i>
-                        <h3 class="text-2xl font-semibold text-deep-blue mb-4">Kuruluş Amacımız</h3>
-                        <p class="text-soft-gray">
-                            Sosyal bilimlerin gücünü kullanarak kurumların toplumsal sorumluluklarını yerine getirirken, aynı zamanda sürdürülebilir değer yaratmalarını sağlamak.
+            </div>
+        </section>
+
+        <!-- Company Story Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-6">
+                            Hikayemiz
+                        </h2>
+                        <p class="text-lg text-light-gray mb-6">
+                            2025 yılında, sosyal bilimlerin kurumsal dünyada daha etkili kullanılması gerektiğine inanan bir grup akademisyen ve danışman tarafından kurulduk.
+                        </p>
+                        <p class="text-lg text-light-gray mb-6">
+                            Amacımız, sosyoloji, psikoloji, ekonomi ve siyaset bilimi gibi disiplinlerin metodolojilerini kullanarak kurumların toplumsal etkisini ölçülebilir ve sürdürülebilir şekilde artırmaktı.
+                        </p>
+                        <p class="text-lg text-light-gray">
+                            Kuruluşumuzdan bu yana, sosyal bilim temelli danışmanlık alanında yenilikçi yaklaşımlar geliştiriyor ve kurumların toplumsal etkisini maksimize etmelerine destek oluyoruz.
+                        </p>
+                    </div>
+                    <div class="bg-light-blue p-8 rounded-lg">
+                        <div class="text-center">
+                            <i class="fas fa-rocket text-6xl text-primary-blue mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-primary-blue mb-4">Kuruluş Amacımız</h3>
+                            <p class="text-light-gray">
+                                2025 yılında kurulan Koru Impact, sosyal bilimlerin gücünü kullanarak kurumların toplumsal sorumluluklarını yerine getirirken, aynı zamanda sürdürülebilir değer yaratmalarını sağlamayı hedefliyor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="py-20 bg-light-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-background p-8 rounded-lg shadow-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-bullseye text-4xl text-primary-green mb-4"></i>
+                            <h3 class="text-2xl font-bold text-primary-blue">Misyonumuz</h3>
+                        </div>
+                        <p class="text-light-gray text-lg leading-relaxed">
+                            Sosyal bilim metodolojilerini kullanarak kurumların toplumsal etkisini ölçülebilir ve sürdürülebilir şekilde artırmak, böylece hem kurumsal başarıyı hem de toplumsal refahı desteklemek.
+                        </p>
+                    </div>
+                    <div class="bg-background p-8 rounded-lg shadow-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-eye text-4xl text-accent-gold mb-4"></i>
+                            <h3 class="text-2xl font-bold text-primary-blue">Vizyonumuz</h3>
+                        </div>
+                        <p class="text-light-gray text-lg leading-relaxed">
+                            Sosyal bilimlerin kurumsal dünyada standart bir yaklaşım haline gelmesini sağlamak ve bu sayede daha adil, sürdürülebilir ve kapsayıcı bir toplum yaratmaya katkıda bulunmak.
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Mission & Vision Section -->
-    <section class="py-20 bg-light-blue">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <div class="text-center mb-6">
-                        <i class="fas fa-bullseye text-4xl text-forest-green mb-4"></i>
-                        <h3 class="text-2xl font-bold text-deep-blue">Misyonumuz</h3>
-                    </div>
-                    <p class="text-soft-gray text-lg leading-relaxed">
-                        Sosyal bilim metodolojilerini kullanarak kurumların toplumsal etkisini ölçülebilir ve sürdürülebilir şekilde artırmak, böylece hem kurumsal başarıyı hem de toplumsal refahı desteklemek.
+        <!-- Expertise Areas Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-4">
+                        Uzmanlık Alanlarımız
+                    </h2>
+                    <p class="text-xl text-light-gray max-w-2xl mx-auto">
+                        Sosyal bilimlerin farklı disiplinlerinde uzmanlaşmış ekibimizle hizmetinizdeyiz
                     </p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <div class="text-center mb-6">
-                        <i class="fas fa-eye text-4xl text-warm-gold mb-4"></i>
-                        <h3 class="text-2xl font-bold text-deep-blue">Vizyonumuz</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-blue">
+                        <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Sosyoloji</h3>
+                        <p class="text-light-gray">Toplumsal yapıları analiz ederek kurumsal sosyal sorumluluk stratejileri geliştiriyoruz</p>
                     </div>
-                    <p class="text-soft-gray text-lg leading-relaxed">
-                        Sosyal bilimlerin kurumsal dünyada standart bir yaklaşım haline gelmesini sağlamak ve bu sayede daha adil, sürdürülebilir ve kapsayıcı bir toplum yaratmaya katkıda bulunmak.
-                    </p>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-green">
+                        <div class="w-16 h-16 bg-primary-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Psikoloji</h3>
+                        <p class="text-light-gray">İnsan davranışlarını anlayarak etkili iletişim ve engagement stratejileri oluşturuyoruz</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-accent-gold">
+                        <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Ekonomi</h3>
+                        <p class="text-light-gray">Sosyal etki yatırımlarının ekonomik değerini ölçerek sürdürülebilir modeller geliştiriyoruz</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-blue">
+                        <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-balance-scale text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Siyaset Bilimi</h3>
+                        <p class="text-light-gray">Politika analizi ile kurumsal sosyal sorumluluk programlarını optimize ediyoruz</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-green">
+                        <div class="w-16 h-16 bg-primary-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Sürdürülebilirlik</h3>
+                        <p class="text-light-gray">Çevresel ve sosyal sürdürülebilirlik stratejileri geliştiriyoruz</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-accent-gold">
+                        <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Araştırma</h3>
+                        <p class="text-light-gray">Kapsamlı sosyal araştırma metodolojileri ile veri odaklı çözümler sunuyoruz</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Expertise Areas Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-4">
-                    Uzmanlık Alanlarımız
+        <!-- Team Section -->
+        <section class="py-20 bg-light-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-4">
+                        Ekibimiz
+                    </h2>
+                    <p class="text-xl text-light-gray max-w-2xl mx-auto">
+                        Sosyal bilimler alanında uzmanlaşmış deneyimli ekibimizle hizmetinizdeyiz
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-32 h-32 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-2">Dr. Şener Cem Irmak</h3>
+                        <p class="text-accent-gold font-medium mb-3">Kurucu & CEO</p>
+                        <p class="text-light-gray text-sm">Sosyoloji doktorası, 20+ yıl akademik ve danışmanlık deneyimi</p>
+                    </div>
+                    <div class="bg-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-32 h-32 bg-primary-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-2">Prof. Mehmet Kaya</h3>
+                        <p class="text-accent-gold font-medium mb-3">Araştırma Direktörü</p>
+                        <p class="text-light-gray text-sm">Psikoloji profesörü, sosyal psikoloji ve davranış analizi uzmanı</p>
+                    </div>
+                    <div class="bg-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-32 h-32 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-2">Dr. Zeynep Demir</h3>
+                        <p class="text-accent-gold font-medium mb-3">Strateji Danışmanı</p>
+                        <p class="text-light-gray text-sm">Ekonomi doktorası, sosyal etki yatırımları ve sürdürülebilirlik uzmanı</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-4">
+                        Başarı Hikayelerimiz
+                    </h2>
+                    <p class="text-xl text-light-gray max-w-2xl mx-auto">
+                        Kurumlarla birlikte yarattığımız toplumsal etki ve başarı hikayeleri
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-background p-8 rounded-lg shadow-lg border-l-4 border-primary-green">
+                        <h3 class="text-xl font-semibold text-primary-blue mb-4">Eğitim Vakfı Projesi</h3>
+                        <p class="text-light-gray mb-4">
+                            Büyük bir eğitim vakfı için sosyal etki değerlendirmesi yaptık ve %40 artış sağladık.
+                        </p>
+                        <div class="flex items-center text-sm text-light-gray">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>2025 - Devam Ediyor</span>
+                        </div>
+                    </div>
+                    <div class="bg-background p-8 rounded-lg shadow-lg border-l-4 border-accent-gold">
+                        <h3 class="text-xl font-semibold text-primary-blue mb-4">Sürdürülebilirlik Stratejisi</h3>
+                        <p class="text-light-gray mb-4">
+                            Teknoloji şirketi için kapsamlı sürdürülebilirlik stratejisi geliştirdik.
+                        </p>
+                        <div class="flex items-center text-sm text-light-gray">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>2025 - Tamamlandı</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary-green to-primary-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Hizmetlerimizi Keşfedin
                 </h2>
-                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
-                    Sosyal bilimlerin farklı disiplinlerinde uzmanlaşmış ekibimizle hizmetinizdeyiz
+                <p class="text-xl mb-8 text-light-blue">
+                    Sosyal bilim temelli danışmanlık yaklaşımımız hakkında daha fazla bilgi almak için hizmetlerimizi inceleyin.
                 </p>
+                <a href="services.html" class="bg-accent-gold text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors inline-block">
+                    Hizmetlerimizi Görün
+                </a>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg border-t-4 border-deep-blue">
-                    <div class="w-16 h-16 bg-deep-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-3">Sosyoloji</h3>
-                    <p class="text-soft-gray">Toplumsal yapıları analiz ederek kurumsal sosyal sorumluluk stratejileri geliştiriyoruz</p>
-                </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg border-t-4 border-forest-green">
-                    <div class="w-16 h-16 bg-forest-green rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-brain text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-3">Psikoloji</h3>
-                    <p class="text-soft-gray">İnsan davranışlarını anlayarak etkili iletişim ve engagement stratejileri oluşturuyoruz</p>
-                </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg border-t-4 border-warm-gold">
-                    <div class="w-16 h-16 bg-warm-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-3">Ekonomi</h3>
-                    <p class="text-soft-gray">Sosyal etki yatırımlarının ekonomik değerini ölçerek sürdürülebilir modeller geliştiriyoruz</p>
-                </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg border-t-4 border-deep-blue">
-                    <div class="w-16 h-16 bg-deep-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-balance-scale text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-3">Siyaset Bilimi</h3>
-                    <p class="text-soft-gray">Politika analizi ile kurumsal sosyal sorumluluk programlarını optimize ediyoruz</p>
-                </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg border-t-4 border-forest-green">
-                    <div class="w-16 h-16 bg-forest-green rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-leaf text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-3">Sürdürülebilirlik</h3>
-                    <p class="text-soft-gray">Çevresel ve sosyal sürdürülebilirlik stratejileri geliştiriyoruz</p>
-                </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg border-t-4 border-warm-gold">
-                    <div class="w-16 h-16 bg-warm-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-search text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-3">Araştırma</h3>
-                    <p class="text-soft-gray">Kapsamlı sosyal araştırma metodolojileri ile veri odaklı çözümler sunuyoruz</p>
+        </section>
+    </div>
+    <div id="content-en" lang="en" class="hidden">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-r from-primary-blue to-primary-green text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
+                    <p class="text-xl md:text-2xl text-light-blue max-w-3xl mx-auto">Creating change with the power of social sciences</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team Section -->
-    <section class="py-20 bg-light-blue">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-4">
-                    Ekibimiz
-                </h2>
-                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
-                    Sosyal bilimler alanında uzmanlaşmış deneyimli ekibimizle hizmetinizdeyiz
-                </p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <div class="w-32 h-32 bg-deep-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-user text-white text-4xl"></i>
+        <!-- Company Story Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-6">
+                            Our Story
+                        </h2>
+                        <p class="text-lg text-light-gray mb-6">
+                            In 2025, a group of academics and consultants, believing that social sciences should be more effectively utilized in the corporate world, established Koru Impact.
+                        </p>
+                        <p class="text-lg text-light-gray mb-6">
+                            Our mission is to measure and sustainably increase the social impact of organizations by using the methodologies of disciplines such as sociology, psychology, economics, and political science.
+                        </p>
+                        <p class="text-lg text-light-gray">
+                            Since our establishment, we have developed innovative approaches in the field of social science consulting and support organizations to maximize their social impact.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-2">Dr. Ayşe Yılmaz</h3>
-                    <p class="text-warm-gold font-medium mb-3">Kurucu & CEO</p>
-                    <p class="text-soft-gray text-sm">Sosyoloji doktorası, 15+ yıl akademik ve danışmanlık deneyimi</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <div class="w-32 h-32 bg-forest-green rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-user text-white text-4xl"></i>
+                    <div class="bg-light-blue p-8 rounded-lg">
+                        <div class="text-center">
+                            <i class="fas fa-rocket text-6xl text-primary-blue mb-4"></i>
+                            <h3 class="text-2xl font-semibold text-primary-blue mb-4">Our Purpose</h3>
+                            <p class="text-light-gray">
+                                Established in 2025, Koru Impact aims to fulfill the social responsibilities of organizations while creating sustainable values using the power of social sciences.
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-2">Prof. Mehmet Kaya</h3>
-                    <p class="text-warm-gold font-medium mb-3">Araştırma Direktörü</p>
-                    <p class="text-soft-gray text-sm">Psikoloji profesörü, sosyal psikoloji ve davranış analizi uzmanı</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                    <div class="w-32 h-32 bg-warm-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-user text-white text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-deep-blue mb-2">Dr. Zeynep Demir</h3>
-                    <p class="text-warm-gold font-medium mb-3">Strateji Danışmanı</p>
-                    <p class="text-soft-gray text-sm">Ekonomi doktorası, sosyal etki yatırımları ve sürdürülebilirlik uzmanı</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Success Stories Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-4">
-                    Başarı Hikayelerimiz
-                </h2>
-                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
-                    Kurumlarla birlikte yarattığımız toplumsal etki ve başarı hikayeleri
-                </p>
+        <!-- Mission & Vision Section -->
+        <section class="py-20 bg-light-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-background p-8 rounded-lg shadow-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-bullseye text-4xl text-primary-green mb-4"></i>
+                            <h3 class="text-2xl font-bold text-primary-blue">Our Mission</h3>
+                        </div>
+                        <p class="text-light-gray text-lg leading-relaxed">
+                            To measure and sustainably increase the social impact of organizations by using social science methodologies, thereby supporting both corporate success and social well-being.
+                        </p>
+                    </div>
+                    <div class="bg-background p-8 rounded-lg shadow-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-eye text-4xl text-accent-gold mb-4"></i>
+                            <h3 class="text-2xl font-bold text-primary-blue">Our Vision</h3>
+                        </div>
+                        <p class="text-light-gray text-lg leading-relaxed">
+                            To establish a standard approach for social sciences in the corporate world and contribute to creating a more equitable, sustainable, and inclusive society.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-forest-green">
-                    <h3 class="text-xl font-semibold text-deep-blue mb-4">Eğitim Vakfı Projesi</h3>
-                    <p class="text-soft-gray mb-4">
-                        Büyük bir eğitim vakfı için sosyal etki değerlendirmesi yaptık ve %40 artış sağladık.
+        </section>
+
+        <!-- Expertise Areas Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-4">
+                        Our Expertise Areas
+                    </h2>
+                    <p class="text-xl text-light-gray max-w-2xl mx-auto">
+                        With our specialized team in different disciplines of social sciences, we are here to serve you.
                     </p>
-                    <div class="flex items-center text-sm text-soft-gray">
-                        <i class="fas fa-calendar mr-2"></i>
-                        <span>2023 - Devam Ediyor</span>
-                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-warm-gold">
-                    <h3 class="text-xl font-semibold text-deep-blue mb-4">Sürdürülebilirlik Stratejisi</h3>
-                    <p class="text-soft-gray mb-4">
-                        Teknoloji şirketi için kapsamlı sürdürülebilirlik stratejisi geliştirdik.
-                    </p>
-                    <div class="flex items-center text-sm text-soft-gray">
-                        <i class="fas fa-calendar mr-2"></i>
-                        <span>2022 - Tamamlandı</span>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-blue">
+                        <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Sociology</h3>
+                        <p class="text-light-gray">We develop social responsibility strategies for organizations by analyzing social structures.</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-green">
+                        <div class="w-16 h-16 bg-primary-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Psychology</h3>
+                        <p class="text-light-gray">We create effective communication and engagement strategies by understanding human behavior.</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-accent-gold">
+                        <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Economics</h3>
+                        <p class="text-light-gray">We develop sustainable models by measuring the economic value of social impact investments.</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-blue">
+                        <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-balance-scale text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Political Science</h3>
+                        <p class="text-light-gray">We optimize social responsibility programs for organizations through political analysis.</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-primary-green">
+                        <div class="w-16 h-16 bg-primary-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Sustainability</h3>
+                        <p class="text-light-gray">We develop sustainability strategies for environmental and social sustainability.</p>
+                    </div>
+                    <div class="text-center p-6 bg-background rounded-lg shadow-lg border-t-4 border-accent-gold">
+                        <div class="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-3">Research</h3>
+                        <p class="text-light-gray">We provide data-driven solutions with comprehensive social research methodologies.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-forest-green to-deep-blue text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Hizmetlerimizi Keşfedin
-            </h2>
-            <p class="text-xl mb-8 text-light-blue">
-                Sosyal bilim temelli danışmanlık yaklaşımımız hakkında daha fazla bilgi almak için hizmetlerimizi inceleyin.
-            </p>
-            <a href="services.html" class="bg-warm-gold text-deep-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors inline-block">
-                Hizmetlerimizi Görün
-            </a>
-        </div>
-    </section>
+        <!-- Team Section -->
+        <section class="py-20 bg-light-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-4">
+                        Our Team
+                    </h2>
+                    <p class="text-xl text-light-gray max-w-2xl mx-auto">
+                        With our specialized and experienced team in the field of social sciences, we are here to serve you.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-32 h-32 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-2">Dr. Şener Cem Irmak</h3>
+                        <p class="text-accent-gold font-medium mb-3">Founder & CEO</p>
+                        <p class="text-light-gray text-sm">Sociology Ph.D., 20+ years of academic and consulting experience</p>
+                    </div>
+                    <div class="bg-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-32 h-32 bg-primary-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-2">Prof. Mehmet Kaya</h3>
+                        <p class="text-accent-gold font-medium mb-3">Research Director</p>
+                        <p class="text-light-gray text-sm">Professor of Psychology, expert in social psychology and behavioral analysis</p>
+                    </div>
+                    <div class="bg-background p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-32 h-32 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-white text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary-blue mb-2">Dr. Zeynep Demir</h3>
+                        <p class="text-accent-gold font-medium mb-3">Strategy Consultant</p>
+                        <p class="text-light-gray text-sm">Economics Ph.D., expert in social impact investments and sustainability</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-4">
+                        Our Success Stories
+                    </h2>
+                    <p class="text-xl text-light-gray max-w-2xl mx-auto">
+                        Our social impact and success stories created with our partners.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-background p-8 rounded-lg shadow-lg border-l-4 border-primary-green">
+                        <h3 class="text-xl font-semibold text-primary-blue mb-4">Education Foundation Project</h3>
+                        <p class="text-light-gray mb-4">
+                            We conducted a social impact assessment for a large education foundation and achieved a 40% increase.
+                        </p>
+                        <div class="flex items-center text-sm text-light-gray">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>2025 - Ongoing</span>
+                        </div>
+                    </div>
+                    <div class="bg-background p-8 rounded-lg shadow-lg border-l-4 border-accent-gold">
+                        <h3 class="text-xl font-semibold text-primary-blue mb-4">Sustainability Strategy</h3>
+                        <p class="text-light-gray mb-4">
+                            We developed a comprehensive sustainability strategy for a technology company.
+                        </p>
+                        <div class="flex items-center text-sm text-light-gray">
+                            <i class="fas fa-calendar mr-2"></i>
+                            <span>2025 - Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary-green to-primary-blue text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Discover Our Services
+                </h2>
+                <p class="text-xl mb-8 text-light-blue">
+                    To learn more about our social science consulting approach, please check out our services.
+                </p>
+                <a href="services.html" class="bg-accent-gold text-primary-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors inline-block">
+                    View Our Services
+                </a>
+            </div>
+        </section>
+    </div>
+    <script>
+        // Dil seçici scripti
+        function setLang(lang) {
+            document.getElementById('content-tr').classList.toggle('hidden', lang !== 'tr');
+            document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+            // Navigation vurgusu
+            document.getElementById('lang-tr').classList.toggle('font-bold', lang === 'tr');
+            document.getElementById('lang-tr').classList.toggle('text-primary-blue', lang === 'tr');
+            document.getElementById('lang-en').classList.toggle('font-bold', lang === 'en');
+            document.getElementById('lang-en').classList.toggle('text-primary-blue', lang === 'en');
+            // Masaüstü menü linkleri
+            document.getElementById('nav-links-tr').classList.toggle('hidden', lang !== 'tr');
+            document.getElementById('nav-links-en').classList.toggle('hidden', lang !== 'en');
+            // Mobil menü linkleri
+            document.getElementById('mobile-links-tr').classList.toggle('hidden', lang !== 'tr');
+            document.getElementById('mobile-links-en').classList.toggle('hidden', lang !== 'en');
+            // Mobil dil seçici
+            document.getElementById('lang-tr-mobile').classList.toggle('font-bold', lang === 'tr');
+            document.getElementById('lang-tr-mobile').classList.toggle('text-primary-blue', lang === 'tr');
+            document.getElementById('lang-en-mobile').classList.toggle('font-bold', lang === 'en');
+            document.getElementById('lang-en-mobile').classList.toggle('text-primary-blue', lang === 'en');
+        }
+        document.getElementById('lang-tr').onclick = function() { setLang('tr'); };
+        document.getElementById('lang-en').onclick = function() { setLang('en'); };
+        document.getElementById('lang-tr-mobile').onclick = function() { setLang('tr'); };
+        document.getElementById('lang-en-mobile').onclick = function() { setLang('en'); };
+        // Mobil menü açma/kapama
+        document.getElementById('mobile-menu-btn').onclick = function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        };
+    </script>
 
     <!-- Footer -->
-    <footer class="bg-dark-gray text-white py-12">
+    <footer class="bg-text-gray text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-2xl font-bold text-warm-gold mb-4">Koru Impact</h3>
-                    <p class="text-soft-gray">
-                        Sosyal bilim temelli danışmanlık hizmetleri ile kurumlarınızın sosyal etkisini maksimize ediyoruz.
+                    <h3 class="text-2xl font-bold text-accent-gold mb-4">Koru Impact</h3>
+                    <p class="text-light-gray">
+                        We maximize the social impact of your organization with our social science consulting services.
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Hızlı Linkler</h4>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-soft-gray hover:text-white transition-colors">Ana Sayfa</a></li>
-                        <li><a href="services.html" class="text-soft-gray hover:text-white transition-colors">Hizmetlerimiz</a></li>
-                        <li><a href="contact.html" class="text-soft-gray hover:text-white transition-colors">İletişim</a></li>
+                        <li><a href="index.html" class="text-light-gray hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-light-gray hover:text-white transition-colors">Our Services</a></li>
+                        <li><a href="contact.html" class="text-light-gray hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Hizmetler</h4>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="services.html" class="text-soft-gray hover:text-white transition-colors">Sosyal Etki Değerlendirmesi</a></li>
-                        <li><a href="services.html" class="text-soft-gray hover:text-white transition-colors">KSS Stratejisi</a></li>
-                        <li><a href="services.html" class="text-soft-gray hover:text-white transition-colors">Araştırma & Analiz</a></li>
+                        <li><a href="services.html" class="text-light-gray hover:text-white transition-colors">Social Impact Assessment</a></li>
+                        <li><a href="services.html" class="text-light-gray hover:text-white transition-colors">KSS Strategy</a></li>
+                        <li><a href="services.html" class="text-light-gray hover:text-white transition-colors">Research & Analysis</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">İletişim</h4>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2">
                         <li class="flex items-center">
-                            <i class="fas fa-envelope text-warm-gold mr-2"></i>
-                            <span class="text-soft-gray">info@koruimpact.com</span>
+                            <i class="fas fa-envelope text-accent-gold mr-2"></i>
+                            <span class="text-light-gray">info@koruimpact.com</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-phone text-warm-gold mr-2"></i>
-                            <span class="text-soft-gray">+90 (212) 555 0123</span>
+                            <i class="fas fa-phone text-accent-gold mr-2"></i>
+                            <span class="text-light-gray">+90 (212) 555 0123</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-warm-gold mr-2"></i>
-                            <span class="text-soft-gray">İstanbul, Türkiye</span>
+                            <i class="fas fa-map-marker-alt text-accent-gold mr-2"></i>
+                            <span class="text-light-gray">Istanbul, Turkey</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-soft-gray mt-8 pt-8 text-center">
-                <p class="text-soft-gray">
-                    © 2024 Koru Impact. Tüm hakları saklıdır.
+            <div class="border-t border-light-gray mt-8 pt-8 text-center">
+                <p class="text-light-gray">
+                    © 2025 Koru Impact. All rights reserved.
                 </p>
             </div>
         </div>
